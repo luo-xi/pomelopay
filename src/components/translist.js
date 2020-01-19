@@ -17,7 +17,7 @@ class TransList extends Component {
         this.props.fetchTransactionData();
     }
 
-    start() {
+    start = () => {
         this.setState({ loading: true });
         setTimeout(() => {
             this.setState({
@@ -27,12 +27,12 @@ class TransList extends Component {
         }, 1000);
     };
 
-    onSelectChange(selectedRowKeys) {
+    onSelectChange = (selectedRowKeys) => {
         console.log(selectedRowKeys);
         this.setState({ selectedRowKeys });
     };
 
-    onRefund() {
+    onRefund = () => {
         this.props.refundTransaction(this.state.selectedRowKeys);
         this.start();
     }
